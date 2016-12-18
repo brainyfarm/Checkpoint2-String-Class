@@ -1,3 +1,3 @@
-[![Coverage Status](https://coveralls.io/repos/github/andela-oakinseye/Checkpoint2-String-Class/badge.svg?branch=develop)](https://coveralls.io/github/andela-oakinseye/Checkpoint2-String-Class?branch=develop)
+[![Build Status](https://travis-ci.org/andela-oakinseye/Checkpoint2-String-Class.svg?branch=develop)](https://travis-ci.org/andela-oakinseye/Checkpoint2-String-Class) [![Coverage Status](https://coveralls.io/repos/github/andela-oakinseye/Checkpoint2-String-Class/badge.svg?branch=develop)](https://coveralls.io/github/andela-oakinseye/Checkpoint2-String-Class?branch=develop)
 # Checkpoint2-String-Class
 Extending javascript String class
