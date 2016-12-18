@@ -36,7 +36,7 @@ const stringClassExtensions = {
    * @return {String} original input capitalizing the first letter
    */
   ucFirst() {
-    return this.replace(this[0], this.charAt(0).toUpper());
+    return this.replace(/[a-z]{1}/, letter => letter.toUpper());
   },
 
   /**
