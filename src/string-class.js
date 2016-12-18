@@ -63,7 +63,7 @@ const stringClassExtensions = {
    * @return {Number} number of words in a string
    */
   wordCount() {
-    return this.words().length;
+    return this.match(/\w+/gi).length;
   },
 
   /**
