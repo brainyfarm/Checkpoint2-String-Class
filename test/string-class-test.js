@@ -38,8 +38,8 @@ describe('String Class Tests', () => {
     it('should return `Coolest` for `coolest`', () => {
         expect('coolest'.ucFirst()).to.equal('Coolest');
     });
-    it('should return `Example` for `Example`', () => {
-        expect('Example'.ucFirst()).to.equal('Example');
+    it('should return `Example` for `example`', () => {
+        expect('example'.ucFirst()).to.equal('Example');
     });
   });
 
