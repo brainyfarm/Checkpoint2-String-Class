@@ -2,7 +2,7 @@
 engines:
   duplication:
     enabled: true
-  exclude_fingerprints:
+    exclude_fingerprints:
     - 2d227cbfe5192c892444cdcc27483c0c
     config:
       languages:
