@@ -91,11 +91,9 @@ const stringClassExtensions = {
    * @return {String} Inversed version of string
    */
   inverseCase() {
-    return this.replace(/[a-z]/gi, (letter) => {
-      return letter === letter.toUpper() ?
-        letter.toLower() :
-        letter.toUpper();
-    });
+    return this.replace(/[a-z]/gi, letter =>
+       (letter === letter.toUpper() ? letter.toLower() : letter.toUpper())
+    );
   },
 
   /**
@@ -104,11 +102,9 @@ const stringClassExtensions = {
    * @return {String} A case-alternated version of the string
    */
   alternatingCase() {
-    return this.replace(/[a-z]/gi, (letter, position) => {
-      return position % 2 ?
-        letter.toUpper() :
-        letter.toLower();
-    });
+    return this.replace(/[a-z]/gi, (letter, position) =>
+    (position % 2 ? letter.toUpper() : letter.toLower())
+    );
   },
 
   /**
