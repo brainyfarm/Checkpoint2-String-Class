@@ -3,7 +3,7 @@ const stringClassExtensions = {
   /**
    * hasVowels
    * Test to see if a string contains vowels
-   * @return {Boolean} true or false
+   * @returns {Boolean} true or false
    */
   hasVowels() {
     const vowels = /[aeiou]/gi;
@@ -13,7 +13,7 @@ const stringClassExtensions = {
   /**
    * toUpper
    * Converts a string to uppercase
-   * @return {String} uppercase equivalent of the string
+   * @returns {String} uppercase equivalent of the string
    */
   toUpper() {
     return this.replace(/[a-z]/g, letter =>
@@ -23,7 +23,7 @@ const stringClassExtensions = {
   /**
    * toLower
    * Converts a string to lower
-   * @return {String} lowercase equivalent of the string
+   * @returns {String} lowercase equivalent of the string
    */
   toLower() {
     return this.replace(/[A-Z]/g, letter =>
@@ -33,7 +33,7 @@ const stringClassExtensions = {
   /**
    * ucFirst
    * Converts the first character in a string to uppercase
-   * @return {String} original input capitalizing the first letter
+   * @returns {String} original input capitalizing the first letter
    */
   ucFirst() {
     return this.replace(/[a-z]{1}/, letter => letter.toUpper());
@@ -42,7 +42,7 @@ const stringClassExtensions = {
   /**
    * isQuestion
    * Test to check if a string is a question
-   * @return {Boolean} true or false
+   * @returns {Boolean} true or false
    */
   isQuestion() {
     return /[\w, ]+\?$/.test(this);
@@ -51,7 +51,7 @@ const stringClassExtensions = {
   /**
    * words
    * Matches all words in a string
-   * @return {Object} An array of all words in string
+   * @returns {Object} An array of all words in string
    */
   words() {
     return this.match(/\w+/gi);
@@ -60,7 +60,7 @@ const stringClassExtensions = {
   /**
    * wordCount
    * Counts and return all words in a string
-   * @return {Number} number of words in a string
+   * @returns {Number} number of words in a string
    */
   wordCount() {
     return this.words().length;
@@ -69,7 +69,7 @@ const stringClassExtensions = {
   /**
    * toCurrency
    * Converts a string of interger to a currency format
-   * @return {String} A currency version of the string
+   * @returns {String} A currency version of the string
    */
   toCurrency() {
     return this.replace(/[a-z]/gi, '')
@@ -79,7 +79,7 @@ const stringClassExtensions = {
   /**
    * fromCurrency
    * Converts a string from currency to it's currency format
-   * @return {String} A formatted version of the string
+   * @returns {String} A formatted version of the string
    */
   fromCurrency() {
     return Number(this.match(/[\d/.]/g).join(''));
@@ -88,7 +88,7 @@ const stringClassExtensions = {
   /**
    * inverseCase
    * Converts each letter in a string to it's inverse case
-   * @return {String} Inversed version of string
+   * @returns {String} Inversed version of string
    */
   inverseCase() {
     return this.replace(/[a-z]/gi, letter =>
@@ -99,7 +99,7 @@ const stringClassExtensions = {
   /**
    * alternatingCase
    * Converts and return string with alternated cases.
-   * @return {String} A case-alternated version of the string
+   * @returns {String} A case-alternated version of the string
    */
   alternatingCase() {
     return this.replace(/[a-z]/gi, (letter, position) =>
@@ -110,7 +110,7 @@ const stringClassExtensions = {
   /**
    * getMiddle
    * Gets and return the middle character(s) in a string
-   * @return {String} The mid character(s) in a string
+   * @returns {String} The mid character(s) in a string
    */
   getMiddle() {
     const middle = Math.round(this.length / 2);
@@ -122,7 +122,7 @@ const stringClassExtensions = {
   /**
    * numberWords
    * Returns an english translated version of each integer in string
-   * @return {String} Returns translated version of integers in the string
+   * @returns {String} Returns translated version of integers in the string
    */
   numberWords() {
     const words = [
@@ -144,7 +144,7 @@ const stringClassExtensions = {
   /**
    * isDigit
    * Test to see if a string contains only a single number digit
-   * @return {Boolean} true or false
+   * @returns {Boolean} true or false
    */
   isDigit() {
     const pattern = /^\d$/;
@@ -154,7 +154,7 @@ const stringClassExtensions = {
   /**
    * doubleCheck
    * Test to see if a string contains multiple consecutive characters (pp)
-   * @return {Boolean} true or false
+   * @returns {Boolean} true or false
    */
   doubleCheck() {
     const pattern = /(.)\1/i;
