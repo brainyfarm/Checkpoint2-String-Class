@@ -46,6 +46,9 @@ describe('String Class Tests', () => {
     it('should return true for `How are you?`', () => {
       expect('How are you?'.isQuestion()).to.be.true;
     });
+    it('should return false for `???`', () => {
+      expect('???'.isQuestion()).to.be.false;
+    });
     it('should return false for `Symbol for question mark is ?.`', () => {
       expect('Symbol for question mark is ?.'.isQuestion()).to.be.false;
     });
@@ -162,10 +165,13 @@ describe('String Class Tests', () => {
       expect('pappy'.doubleCheck()).to.be.true;
     });
     it('should return false for `papa`', () => {
-      expect('papa'.isDigit()).to.be.false;
+      expect('papa'.doubleCheck()).to.be.false;
+    });
+    it('should return true for `Halo Wars!!`', () => {
+      expect('Halo Wars!!'.doubleCheck()).to.be.true;
     });
     it('should return true for `Ralia and cornNy`', () => {
-      expect('Ralia and cornNy'.isDigit()).to.be.false;
+      expect('Ralia and cornNy'.doubleCheck()).to.be.true;
     });
   });
 });
