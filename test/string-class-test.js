@@ -7,171 +7,262 @@ require('../src/string-class');
 
 describe('String Class Tests', () => {
   describe('hasVowels', () => {
-    it('should return true for `hello world`', () => {
-      expect('hello world'.hasVowels()).to.be.true;
+    const sampleString1 = 'hello';
+    const sampleString2 = 'sky';
+
+    it(`should return true for ${sampleString1}`, () => {
+      expect(sampleString1.hasVowels()).to.be.true;
     });
-    it('should return false for `sky`', () => {
-      expect('sky'.hasVowels()).to.be.false;
+    it(`should return false for ${sampleString2}`, () => {
+      expect(sampleString2.hasVowels()).to.be.false;
     });
   });
 
   describe('toUpper', () => {
-    it('should return `GOOD` for `good`', () => {
-      expect('good'.toUpper()).to.equal('GOOD');
+    const sampleString3 = 'good';
+    const upperSampleString3 = 'GOOD';
+    const sampleString4 = 'works';
+    const upperSampleString4 = 'WORKS';
+
+    it(`should return ${upperSampleString3} for ${sampleString3}`, () => {
+      expect(sampleString3.toUpper()).to.equal(upperSampleString3);
     });
-    it('should return `WORKS` for `works`', () => {
-      expect('works'.toUpper()).to.equal('WORKS');
+    it(`should return WORKS for works`, () => {
+      expect(sampleString4.toUpper()).to.equal(upperSampleString4);
     });
   });
 
   describe('toLower', () => {
-    it('should return `lower` for `LOWER`', () => {
-      expect('LOWER'.toLower()).to.equal('lower');
+    const sampleString5 = 'LOWER';
+    const lowerSampleString5 = 'lower';
+    const sampleString6 = 'ChArActer';
+    const lowerSampleString6 = 'character';
+
+    it(`should return ${lowerSampleString5} for ${sampleString5}`, () => {
+      expect(sampleString5.toLower()).to.equal(lowerSampleString5);
     });
-    it('should return `character` for `ChArActer`', () => {
-      expect('ChArActer'.toLower()).to.equal('character');
+    it(`should return character for ChArActer`, () => {
+      expect(sampleString6.toLower()).to.equal(lowerSampleString6);
     });
   });
 
   describe('ucFirst', () => {
-    it('should return `Coolest` for `coolest`', () => {
-      expect('coolest'.ucFirst()).to.equal('Coolest');
+    const sampleString7 = 'coolest';
+    const convertedSampleString7 = 'Coolest';
+    const sampleString8 = 'example';
+    const convertedSampleString8 = 'Example';
+
+    it(`should return ${convertedSampleString7} for ${sampleString7}`, () => {
+      expect(sampleString7.ucFirst()).to.equal(convertedSampleString7);
     });
-    it('should return `Example` for `example`', () => {
-      expect('example'.ucFirst()).to.equal('Example');
+    it(`should return ${convertedSampleString8} for ${sampleString8}`, () => {
+      expect(sampleString8.ucFirst()).to.equal(convertedSampleString8);
     });
   });
 
   describe('isQuestion', () => {
-    it('should return true for `How are you?`', () => {
-      expect('How are you?'.isQuestion()).to.be.true;
+    const sampleQuestion = 'How are you?';
+    const notAQuestion = '???';
+    const notAQuestion2 = 'Symbol for question mark is ?.';
+
+    it(`should return true for ${sampleQuestion}`, () => {
+      expect(sampleQuestion.isQuestion()).to.be.true;
     });
-    it('should return false for `???`', () => {
-      expect('???'.isQuestion()).to.be.false;
+    it(`should return false for ${notAQuestion}`, () => {
+      expect(notAQuestion.isQuestion()).to.be.false;
     });
-    it('should return false for `Symbol for question mark is ?.`', () => {
-      expect('Symbol for question mark is ?.'.isQuestion()).to.be.false;
+    it(`should return false for ${notAQuestion2}`, () => {
+      expect(notAQuestion2.isQuestion()).to.be.false;
     });
   });
 
   describe('words', () => {
-    it('should return `[ "hello", "world" ]` for `hello world`', () => {
-      expect('hello world'.words()).to.eql(['hello', 'world']);
+    const sampleSentence = 'hello world';
+    const sentenceWords = ['hello', 'world'];
+    const oneWord = 'hello';
+    const oneWordArray = ['hello'];
+
+    it(`should return ${sentenceWords} for ${sampleSentence}`, () => {
+      expect(sampleSentence.words()).to.eql(sentenceWords);
     });
-    it('should return `["hello"]` for `hello`', () => {
-      expect('hello'.words()).to.eql(['hello']);
+    it(`should return ${oneWordArray} for ${oneWord}`, () => {
+      expect(oneWord.words()).to.eql(oneWordArray);
     });
   });
 
   describe('wordCount', () => {
-    it('should return 2 for `hello world`', () => {
-      expect('hello world'.wordCount()).to.equal(2);
+    const sampleSentence = 'hello world';
+    const sentenceWords = ['hello', 'world'];
+    const oneWord = 'hello';
+    const oneWordArray = ['hello'];
+
+    it(`should return 2 for ${sampleSentence}`, () => {
+      expect(sampleSentence.wordCount()).to.equal(2);
     });
-    it('should return 1 for `hello`', () => {
-      expect('hello'.wordCount()).to.equal(1);
+    it(`should return 1 for ${oneWord}`, () => {
+      expect(oneWord.wordCount()).to.equal(1);
     });
-    it('should return `number` for `typeof wordCount("hello")`', () => {
-      expect(typeof 'hello'.wordCount()).to.equal('number');
+    it(`should return 'number' for 'typeof wordCount(${oneWord})'`, () => {
+      expect(typeof oneWord.wordCount()).to.equal('number');
     });
   });
 
   describe('toCurrency', () => {
-    it('should return `111,111` for `111111`', () => {
-      expect('111111'.toCurrency()).to.equal('111,111');
+    const sampleNumber = '111111';
+    const sampleNumberCurrency = '111,111';
+    const sampleNumber2 = '12345.22';
+    const sampleNumber2Currency = '12,345.22';
+    const sampleNumber3 = '111';
+
+    it(`should return ${sampleNumberCurrency} for ${sampleNumber}`, () => {
+      expect(sampleNumber.toCurrency()).to.equal(sampleNumberCurrency);
     });
-    it('should return `12,345.22` for `12345.22`', () => {
-      expect('12345.22'.toCurrency()).to.equal('12,345.22');
+    it(`should return ${sampleNumber2Currency} for ${sampleNumber2}`, () => {
+      expect(sampleNumber2.toCurrency()).to.equal(sampleNumber2Currency);
     });
-    it('should return `string` for `typeof toCurrency("11000")`', () => {
-      expect(typeof '111111'.toCurrency()).to.equal('string');
+    it(`should return ${sampleNumber3} for ${sampleNumber3}`, () => {
+      expect(sampleNumber3.toCurrency()).to.equal(sampleNumber3);
+    });
+    it(`should return 'string' for 'typeof ${sampleNumber}.toCurrency()'`, () => {
+      expect(typeof sampleNumber.toCurrency()).to.equal('string');
     });
   });
 
   describe('fromCurrency', () => {
-    it('should return 11111.11 for 11,111.11', () => {
-      expect('11,111.11'.fromCurrency()).to.equal(11111.11);
+    const sampleCurrency = '11,111.11';
+    const sampleCurrencyNumber = 11111.11;
+    const sampleCurrency2 = '111,111.00';
+    const sampleCurrency2Number = 111111;
+
+    it(`should return ${sampleCurrencyNumber} for ${sampleCurrency}`, () => {
+      expect(sampleCurrency.fromCurrency()).to.equal(sampleCurrencyNumber);
     });
-    it('should return 111111 for `111,111.00`', () => {
-      expect('111,111.00'.fromCurrency()).to.equal(111111);
+    it(`should return ${sampleCurrency2Number} for ${sampleCurrency2}`, () => {
+      expect(sampleCurrency2.fromCurrency()).to.equal(sampleCurrency2Number);
     });
-    it('should return `number` for `typeof fromCurrency("111,111")`', () => {
-      expect(typeof '111,111'.fromCurrency()).to.equal('number');
+    it(`should return 'number' for 'typeof fromCurrency(${sampleCurrency})'`, () => {
+      expect(typeof sampleCurrency.fromCurrency()).to.equal('number');
     });
   });
 
   describe('inverseCase', () => {
-    it('should return `HeLlO` for `hElLo', () => {
-      expect('hElLo'.inverseCase()).to.equal('HeLlO');
+    const firstString = 'hElLo';
+    const convertedFirstString = 'HeLlO';
+    const secondString = 'abc';
+    const convertedSecondString = 'ABC';
+    const thirdString = 'ABC';
+    const convertedThirdString = 'abc';
+
+    it(`should return ${convertedFirstString} for ${firstString}`, () => {
+      expect(firstString.inverseCase()).to.equal(convertedFirstString);
     });
-    it('should return `ABC` for `abc`', () => {
-      expect('abc'.inverseCase()).to.equal('ABC');
+    it(`should return ${convertedSecondString} for ${secondString}`, () => {
+      expect(secondString.inverseCase()).to.equal(convertedSecondString);
     });
-    it('should return `abc` for `ABC`', () => {
-      expect('ABC'.inverseCase()).to.equal('abc');
+    it(`should return ${convertedThirdString} for ${thirdString}`, () => {
+      expect(thirdString.inverseCase()).to.equal(convertedThirdString);
     });
   });
 
   describe('alternatingCase', () => {
-    it('should return `hElLo` for `hello', () => {
-      expect('hello'.alternatingCase()).to.equal('hElLo');
+    const string1 = 'hello';
+    const convertedString1 = 'hElLo';
+    const string2 = 'ABC';
+    const convertedString2 = 'aBc';
+    const string3 = 'WORLD';
+    const convertedString3 = 'wOrLd';
+
+    it(`should return ${convertedString1} for ${string1}`, () => {
+      expect(string1.alternatingCase()).to.equal(convertedString1);
     });
-    it('should return `aBc` for `ABC`', () => {
-      expect('ABC'.alternatingCase()).to.equal('aBc');
+    it(`should return ${convertedString2} for ${string2}`, () => {
+      expect(string2.alternatingCase()).to.equal(convertedString2);
     });
-    it('should return `wOrLd` for `WORLD`', () => {
-      expect('WORLD'.alternatingCase()).to.equal('wOrLd');
+    it(`should return ${convertedString3} for ${string3}`, () => {
+      expect(string3.alternatingCase()).to.equal(convertedString3);
     });
   });
 
   describe('getMiddle', () => {
-    it('should return `N` for `AND', () => {
-      expect('AND'.getMiddle()).to.equal('N');
+    const sampleText = 'AND';
+    const sampleTextMiddle = 'N';
+    const sampleText2 = 'ABCD';
+    const sampleText2Middle = 'BC'
+    const sampleText3 = 'Cool';
+    const sampleText3Middle = 'oo'
+
+    it(`should return ${sampleTextMiddle} for ${sampleText}`, () => {
+      expect(sampleText.getMiddle()).to.equal(sampleTextMiddle);
     });
-    it('should return `BC` for `ABCD`', () => {
-      expect('ABCD'.getMiddle()).to.equal('BC');
+    it(`should return ${sampleText2Middle} for ${sampleText2}`, () => {
+      expect(sampleText2.getMiddle()).to.equal(sampleText2Middle);
     });
-    it('should return `oo` for `Cool`', () => {
-      expect('Cool'.getMiddle()).to.equal('oo');
+    it(`should return ${sampleText3Middle} for ${sampleText3}`, () => {
+      expect(sampleText3.getMiddle()).to.equal(sampleText3Middle);
     });
   });
 
   describe('numberWords', () => {
-    it('should return `zero eight zero` for `080`', () => {
-      expect('080'.numberWords()).to.equal('zero eight zero');
+    const sampleNumber = '080';
+    const sampleNumberWords = 'zero eight zero';
+    const sampleNumber2 = '112';
+    const sampleNumber2Words = 'one one two';
+    const sampleNumber3 = '5Bottles';
+    const sampleNumber3Words = 'five Bottles';
+
+    it(`should return ${sampleNumberWords} for ${sampleNumber}`, () => {
+      expect(sampleNumber.numberWords()).to.equal(sampleNumberWords);
     });
-    it('should return `one one two` for `112`', () => {
-      expect('112'.numberWords()).to.equal('one one two');
+    it(`should return ${sampleNumber2Words} for ${sampleNumber2}`, () => {
+      expect(sampleNumber2.numberWords()).to.equal(sampleNumber2Words);
     });
-    it('should return `five Bottles` for `5Bottles`', () => {
-      expect('5Bottles'.numberWords()).to.equal('five Bottles');
+    it(`should return ${sampleNumber3Words} for ${sampleNumber3}`, () => {
+      expect(sampleNumber3.numberWords()).to.equal(sampleNumber3Words);
     });
   });
 
   describe('isDigit', () => {
-    it('should return true for `0`', () => {
-      expect('0'.isDigit()).to.be.true;
+    const sampleDigit1 = '0';
+    const sampleDigit2 = '112';
+    const sampleDigit3 = 'one';
+    const sampleDigit4 = 'm';
+
+    it(`should return true for ${sampleDigit1}`, () => {
+      expect(sampleDigit1.isDigit()).to.be.true;
     });
-    it('should return false for `112`', () => {
-      expect('112'.isDigit()).to.be.false;
+    it(`should return false for ${sampleDigit2}`, () => {
+      expect(sampleDigit2.isDigit()).to.be.false;
     });
-    it('should return false for `one`', () => {
-      expect('one'.isDigit()).to.be.false;
+    it(`should return false for ${sampleDigit3}`, () => {
+      expect(sampleDigit3.isDigit()).to.be.false;
+    });
+    it(`should return false for ${sampleDigit4}`, () => {
+      expect(sampleDigit4.isDigit()).to.be.false;
     });
   });
 
 
   describe('doubleCheck', () => {
-    it('should return true for `pappy`', () => {
-      expect('pappy'.doubleCheck()).to.be.true;
+    const sampleText1 = 'pappy';
+    const sampleText2 = 'papa';
+    const sampleText3 = 'Halo Wars!!';
+    const sampleText4 = 'Ralia and cornNy';
+    const sampleText5 = 't  f';
+
+    it(`should return true for ${sampleText1}`, () => {
+      expect(sampleText1.doubleCheck()).to.be.true;
     });
-    it('should return false for `papa`', () => {
-      expect('papa'.doubleCheck()).to.be.false;
+    it(`should return false for ${sampleText2}`, () => {
+      expect(sampleText2.doubleCheck()).to.be.false;
     });
-    it('should return true for `Halo Wars!!`', () => {
-      expect('Halo Wars!!'.doubleCheck()).to.be.true;
+    it(`should return true for ${sampleText3}`, () => {
+      expect(sampleText3.doubleCheck()).to.be.true;
     });
-    it('should return true for `Ralia and cornNy`', () => {
-      expect('Ralia and cornNy'.doubleCheck()).to.be.true;
+    it(`should return true for ${sampleText4}`, () => {
+      expect(sampleText4.doubleCheck()).to.be.true;
+    });
+    it(`should return true for ${sampleText5}`, () => {
+      expect(sampleText5.doubleCheck()).to.be.true;
     });
   });
 });
