@@ -68,7 +68,7 @@ const stringClassExtensions = {
 
   /**
    * toCurrency
-   * Converts a string of interger to a currency format
+   * Converts a string of integer to a currency format
    * @returns {String} A currency version of the string
    */
   toCurrency() {
@@ -87,7 +87,7 @@ const stringClassExtensions = {
 
   /**
    * inverseCase
-   * Converts each letter in a string to it's inverse case
+   * Converts each letter in a string to its inverse case
    * @returns {String} Inversed version of string
    */
   inverseCase() {
@@ -121,8 +121,8 @@ const stringClassExtensions = {
 
   /**
    * numberWords
-   * Returns an english translated version of each integer in string
-   * @returns {String} Returns translated version of integers in the string
+   * Returns numbers in string in words
+   * @returns {String} Returns all numbers in string in words
    */
   numberWords() {
     const words = [
