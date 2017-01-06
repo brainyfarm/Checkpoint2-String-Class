@@ -88,7 +88,7 @@ const stringClassExtensions = {
   /**
    * inverseCase
    * Converts each letter in a string to its inverse case
-   * @returns {String} Inversed version of string
+   * @returns {String} Inverse case of each character in the string
    */
   inverseCase() {
     return this.replace(/[a-z]/gi, letter =>
